@@ -14918,6 +14918,12 @@ readers do not read off random characters that represent icons */
 
 body {
   background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+body * {
+  transition: 200ms ease-in-out;
+  user-select: none;
 }
 body #top-nav {
   width: 100vw;
@@ -14927,10 +14933,7 @@ body #top-nav a {
   color: white;
 }
 body #top-nav #search-form {
-  width: 55vw;
-}
-body #top-nav #search-form input {
-  width: 40vw;
+  width: auto;
   margin-right: 1em;
 }
 body #top-second-nav {
@@ -14970,6 +14973,21 @@ body .card-container .language-box {
   padding: 1em;
   background-color: white;
   color: #ff627d;
+  margin: 0.2em;
+}
+body .profile-card {
+  background-color: #D32F2F;
+  color: white;
+  align-items: center;
+}
+body .profile-card .card-img-top {
+  border-radius: 500px;
+  width: 15em;
+  height: 15em;
+  margin-top: 2em;
+}
+body .profile-card #name {
+  font-size: 2em;
   margin: 0.2em;
 }
 

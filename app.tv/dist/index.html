@@ -9,10 +9,9 @@
     <body>
         <!-- Top Nav -->
         <nav id="top-nav" class="navbar sticky-top navbar-light float-left">
-            <a class="navbar-brand" href="https://www.nkassets.tk/app.tv/dist/#"><i class="fas fa-tv"></i> APP.TV</a>
+            <a class="navbar-brand" href="#"><i class="fas fa-tv"></i> APP.TV</a>
 
             <form id="search-form" class="form-inline float-right">
-                <input class="form-control float-right" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light my-2 my-sm-0 float-right" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
@@ -20,28 +19,28 @@
         </nav>
         <!-- Top Secondary Nav -->
         <nav id="top-second-nav" class="navbar navbar-light bg-light">
-            <button class="btn nav-item nav-item-active">
+            <button id="hom-button" class="btn nav-item nav-item-active">
                 <i class="fas fa-tv"></i><br>Live
             </button>
-            <button class="btn nav-item">
+            <button id="fav-button" class="btn nav-item">
                 <i class="fas fa-heart"></i><br>Favourites
             </button>
-            <button class="btn nav-item">
+            <button id="cat-button" class="btn nav-item">
                 <i class="fas fa-history"></i><br>Catch-Up
             </button>
-            <button class="btn nav-item">
+            <button id="mov-button" class="btn nav-item">
                 <i class="fas fa-film"></i><br>Movies
             </button>
-            <button class="btn nav-item">
+            <button id="arc-button" class="btn nav-item">
                 <i class="fas fa-archive"></i><br>Archive
             </button>
-            <button class="btn nav-item">
+            <button id="pro-button" class="btn nav-item">
                 <i class="fas fa-user-circle"></i><br>Profile
             </button>
         </nav>
 
         <!-- Home Content -->
-        <div id="home">
+        <div id="hom-tab">
             <!-- Carousal -->
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -470,6 +469,649 @@
                         <div class="card-img-overlay">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Last updated 3 mins ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Favourite Content -->
+        <div id="fav-tab" class="container">
+            <!-- Favourites -->
+            <p id="activated-channels" class="p-3">
+                Favourites
+            </p>
+
+            <div class="row row-cols-3 row-cols-md-3">
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Catch-up Content -->
+        <div id="cat-tab" class="container">
+            <!-- Catch-Up -->
+            <p id="activated-channels" class="p-3">
+                < Channel Name | News | Catch-Up
+            </p>
+
+            <div class="row row-cols-3 row-cols-md-3">
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- movies Content -->
+        <div id="mov-tab" class="container">
+            <p class="p-3">Movies</p>
+            <!-- Carousal -->
+            <div id="carouselExampleIndicatorsMovies" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicatorsMovies" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicatorsMovies" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicatorsMovies" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#777"></rect>
+                            <text x="40%" y="50%" fill="#555" dy=".3em">
+                                First slide
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#777"></rect>
+                            <text x="40%" y="50%" fill="#555" dy=".3em">
+                                Second slide
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#777"></rect>
+                            <text x="40%" y="50%" fill="#555" dy=".3em">
+                                Third slide
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicatorsMovies" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicatorsMovies" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <p class="p-3">Movies By Language</p>
+            <div class="card-container">
+                <div class="card language-box">
+                    Hindi
+                </div>
+                <div class="card language-box">
+                    English
+                </div>
+                <div class="card language-box">
+                    Marathi
+                </div>
+                <div class="card language-box">
+                    Thelgu
+                </div>
+                <div class="card language-box">
+                    Tamil
+                </div>
+            </div>
+            <!-- Latest Movies -->
+            <p id="activated-channels" class="p-3">
+                Latest Movies
+            </p>
+
+            <div class="row row-cols-3 row-cols-md-3">
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Movies -->
+            <p id="activated-channels" class="p-3">
+                Movies
+            </p>
+
+            <div class="row row-cols-3 row-cols-md-3">
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- archive Content -->
+        <div id="arc-tab" class="container">
+            <p class="p-3">Recently Watched</p>
+            <!-- Carousal -->
+            <div id="carouselExampleIndicatorsArchive" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicatorsArchive" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicatorsArchive" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicatorsArchive" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#777"></rect>
+                            <text x="40%" y="50%" fill="#555" dy=".3em">
+                                First slide
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#777"></rect>
+                            <text x="40%" y="50%" fill="#555" dy=".3em">
+                                Second slide
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#777"></rect>
+                            <text x="40%" y="50%" fill="#555" dy=".3em">
+                                Third slide
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicatorsArchive" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicatorsArchive" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <p class="p-3">Archived Channels</p>
+            <div class="row row-cols-3 row-cols-md-3">
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- profile Content -->
+        <div id="pro-tab" class="container">
+            <br><br>
+            <center>
+                <!-- Login Card -->
+                <div class="card profile-card" style="width: 35rem;">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#6c757d"></rect>
+                        <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                            Image cap
+                        </text>
+                    </svg>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                        </div>
+                        <button class="btn btn-secondary">
+                            Log In
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <!-- Profile Card -->
+                <div class="card profile-card" style="width: 35rem;">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#6c757d"></rect>
+                        <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                            Image cap
+                        </text>
+                    </svg>
+                    <div class="card-body">
+                        <p id="name">Benjamin Tims</p>
+                        <p id="email">BenjaminTims@example.com</p>
+                        <button class="btn btn-secondary">
+                            Log Out <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Activated Channels -->
+                <p id="activated-channels" class="p-3">
+                    Package ( No. of channels 247 )
+                </p>
+
+                <div class="row row-cols-3 row-cols-md-3">
+                    <div class="col mb-3">
+                        <div class="card">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#6c757d"></rect>
+                                <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                    Image cap
+                                </text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#6c757d"></rect>
+                                <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                    Image cap
+                                </text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#6c757d"></rect>
+                                <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                    Image cap
+                                </text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#6c757d"></rect>
+                                <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                    Image cap
+                                </text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#6c757d"></rect>
+                                <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                    Image cap
+                                </text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="card">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#6c757d"></rect>
+                                <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                    Image cap
+                                </text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+
+        <!-- player -->
+        <div id="pla-tab" class="container">
+            <!-- Player Code -->
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#6c757d"></rect>
+                            <text x="40%" y="50%" fill="#dee2e6" dy=".3em">
+                                Image cap
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                                This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This
+                                content is a little bit longer.
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </p>
                         </div>
                     </div>
                 </div>

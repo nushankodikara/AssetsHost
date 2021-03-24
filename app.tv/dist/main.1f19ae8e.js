@@ -22867,8 +22867,55 @@ require("@fortawesome/fontawesome-free/css/all.css");
 
 require("@fortawesome/fontawesome-free/js/all.js");
 
+var _jquery = _interopRequireDefault(require("jquery"));
+
 require("./style.scss");
-},{"bootstrap/dist/css/bootstrap.css":"../node_modules/bootstrap/dist/css/bootstrap.css","bootstrap/dist/js/bootstrap.js":"../node_modules/bootstrap/dist/js/bootstrap.js","@fortawesome/fontawesome-free/css/all.css":"../node_modules/@fortawesome/fontawesome-free/css/all.css","@fortawesome/fontawesome-free/js/all.js":"../node_modules/@fortawesome/fontawesome-free/js/all.js","./style.scss":"style.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* 
+Tab Index 
+
+0 = home
+1 = favourites
+2 = catch-up
+3 = movies
+4 = archive
+5 = profile
+6 = player
+
+*/
+var tabID = ["#hom-tab", "#fav-tab", "#cat-tab", "#mov-tab", "#arc-tab", "#pro-tab", "#pla-tab"];
+var butID = ["#hom-button", "#fav-button", "#cat-button", "#mov-button", "#arc-button", "#pro-button", "#pla-button"];
+
+var tabChanger = function tabChanger(index) {
+  for (var i in tabID) {
+    if (i == index) {
+      (0, _jquery.default)(tabID[i]).show();
+      (0, _jquery.default)(butID[i]).addClass("nav-item-active");
+    } else {
+      (0, _jquery.default)(tabID[i]).hide();
+      (0, _jquery.default)(butID[i]).removeClass("nav-item-active");
+    }
+  }
+};
+
+var tabEventAdder = function tabEventAdder() {
+  var _loop = function _loop(i) {
+    (0, _jquery.default)(butID[i]).on("click", function () {
+      tabChanger(i);
+    });
+  };
+
+  for (var i in butID) {
+    _loop(i);
+  }
+}; // Initialization
+
+
+tabChanger(0);
+tabEventAdder();
+},{"bootstrap/dist/css/bootstrap.css":"../node_modules/bootstrap/dist/css/bootstrap.css","bootstrap/dist/js/bootstrap.js":"../node_modules/bootstrap/dist/js/bootstrap.js","@fortawesome/fontawesome-free/css/all.css":"../node_modules/@fortawesome/fontawesome-free/css/all.css","@fortawesome/fontawesome-free/js/all.js":"../node_modules/@fortawesome/fontawesome-free/js/all.js","jquery":"../node_modules/jquery/dist/jquery.js","./style.scss":"style.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -22896,7 +22943,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59863" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51792" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
