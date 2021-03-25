@@ -14928,6 +14928,7 @@ body * {
 body #top-nav {
   width: 100vw;
   background-color: red;
+  z-index: 3;
 }
 body #top-nav a {
   color: white;
@@ -14938,6 +14939,7 @@ body #top-nav #search-form {
 }
 body #top-second-nav {
   width: 100vw;
+  z-index: 2;
 }
 body #top-second-nav .nav-item {
   width: 15vw;
@@ -14945,6 +14947,7 @@ body #top-second-nav .nav-item {
   padding-bottom: 1em;
   text-align: center;
   font-size: 0.55em;
+  transition: 200ms ease-in-out;
 }
 body #top-second-nav .nav-item svg {
   width: 4em;
@@ -14952,6 +14955,9 @@ body #top-second-nav .nav-item svg {
   background-color: #adadad;
   border-radius: 500px;
   padding: 1em;
+}
+body #top-second-nav .nav-item:hover, body #top-second-nav .nav-item:focus {
+  transform: scale(1.25);
 }
 body #top-second-nav .nav-item-active svg {
   background-color: #ff3131;
@@ -14975,6 +14981,10 @@ body .card-container .language-box {
   margin: 0.2em;
   text-transform: uppercase;
 }
+body .card-container .language-box:focus, body .card-container .language-box:hover {
+  transform: scale(1.05);
+  color: red;
+}
 body .card {
   margin: 0.5em;
 }
@@ -14988,6 +14998,9 @@ body .card .live-title {
   background-color: white;
   border-radius: 0.5em;
   padding: 0.3em;
+}
+body .card:focus, body .card:hover {
+  transform: scale(1.05);
 }
 body .profile-card {
   background-color: #d32f2f;
@@ -15017,6 +15030,17 @@ body .cardset {
 }
 body .cardset .card {
   max-width: 16em;
+}
+body .cardset .card:focus, body .cardset .card:hover {
+  transform: scale(1.05);
+}
+body #lad-tab .cardset .card {
+  text-align: center;
+  place-items: center;
+  padding: 1em;
+}
+body #lad-tab .cardset .card:focus, body #lad-tab .cardset .card:hover {
+  background-color: #fd4d4d;
 }
 .video-js .vjs-big-play-button .vjs-icon-placeholder:before, .vjs-button > .vjs-icon-placeholder:before, .video-js .vjs-modal-dialog, .vjs-modal-dialog .vjs-modal-dialog-content {
   position: absolute;

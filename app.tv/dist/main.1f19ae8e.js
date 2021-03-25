@@ -101279,7 +101279,121 @@ exports.default = function (maybeElementId) {
 };
 
 module.exports = exports['default'];
-},{"sister":"../node_modules/sister/src/sister.js","./loadYouTubeIframeApi":"../node_modules/youtube-player/dist/loadYouTubeIframeApi.js","./YouTubePlayer":"../node_modules/youtube-player/dist/YouTubePlayer.js"}],"main.js":[function(require,module,exports) {
+},{"sister":"../node_modules/sister/src/sister.js","./loadYouTubeIframeApi":"../node_modules/youtube-player/dist/loadYouTubeIframeApi.js","./YouTubePlayer":"../node_modules/youtube-player/dist/YouTubePlayer.js"}],"../node_modules/@gauntface/dpad-nav/build/node-lib/_focusable-item.js":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FocusableItem = void 0;
+class FocusableItem {
+    constructor(ele) {
+        this.focusState = false;
+        this.element = ele;
+        this.resetNeighbors();
+    }
+    getElement() {
+        return this.element;
+    }
+    focus() {
+        this.element.focus();
+    }
+    resetNeighbors() {
+        this.neighbors = {
+            top: null,
+            bottom: null,
+            left: null,
+            right: null,
+        };
+    }
+    ;
+    setTopFocusItemIndex(index) {
+        this.neighbors.top = index;
+    }
+    ;
+    getTopFocusItemIndex() {
+        return this.neighbors.top;
+    }
+    ;
+    setBottomFocusItemIndex(index) {
+        this.neighbors.bottom = index;
+    }
+    ;
+    getBottomFocusItemIndex() {
+        return this.neighbors.bottom;
+    }
+    ;
+    setLeftFocusItemIndex(index) {
+        this.neighbors.left = index;
+    }
+    ;
+    getLeftFocusItemIndex() {
+        return this.neighbors.left;
+    }
+    ;
+    setRightFocusItemIndex(index) {
+        this.neighbors.right = index;
+    }
+    ;
+    getRightFocusItemIndex() {
+        return this.neighbors.right;
+    }
+    ;
+    isFocusable() {
+        if (this.element.style.display === 'none' || this.element.style.visibility === 'hidden') {
+            return false;
+        }
+        let tabIndexAttr = this.element.getAttribute('tabindex');
+        if (!tabIndexAttr) {
+            return false;
+        }
+        try {
+            const tabIndex = parseInt(tabIndexAttr, 10);
+            return tabIndex > -1;
+        }
+        catch (err) {
+        }
+        return false;
+    }
+    getMetrics() {
+        var clientRect = this.element.getBoundingClientRect();
+        return {
+            width: clientRect.width,
+            height: clientRect.height,
+            left: clientRect.left,
+            right: clientRect.left + clientRect.width,
+            top: clientRect.top,
+            bottom: clientRect.top + clientRect.height,
+            center: {
+                x: clientRect.left + (clientRect.width / 2),
+                y: clientRect.top + (clientRect.height / 2)
+            }
+        };
+    }
+    onItemClickStateChange(isDown) {
+    }
+}
+exports.FocusableItem = FocusableItem;
+
+},{}],"../node_modules/@gauntface/dpad-nav/build/node-lib/_calc-distance.js":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.calcDistance = void 0;
+function calcDistance(x, y) {
+    return Math.floor(Math.sqrt((x * x) + (y * y)));
+}
+exports.calcDistance = calcDistance;
+
+},{}],"../node_modules/@gauntface/dpad-nav/build/node-lib/dpad-controller.js":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DpadController=void 0;const e=require("./_focusable-item"),t=require("./_calc-distance");exports.DpadController=class{constructor(){this.focusableItems=[],this.currentlyFocusedItem=null,this.enabled=!1,this.getRightDistance=function(e,t){return this.horizontalDistance(e,t,e,t)},this.focusableItems=[],this.onKeyDown=this.onKeyDown.bind(this),this.onKeyUp=this.onKeyUp.bind(this),this.enable()}disable(){this.enabled&&(document.removeEventListener("keydown",this.onKeyDown),document.removeEventListener("keyup",this.onKeyUp),this.enabled=!1)}enable(){this.enabled||(document.addEventListener("keydown",this.onKeyDown),document.addEventListener("keyup",this.onKeyUp),this.enabled=!0)}findFocusableItems(){const t=document.querySelectorAll(".dpad-focusable");for(const s of t)this.addFocusableItem(new e.FocusableItem(s))}addFocusableItem(e){this.focusableItems.push(e)}getFocusableItems(){return this.focusableItems}getFocusableItem(e){return e>=this.focusableItems.length||e<0?null:this.focusableItems[e]}setCurrentFocusItem(e){const t=this.getFocusableItem(e);this.currentlyFocusedItem=t,this.currentlyFocusedItem&&this.currentlyFocusedItem.focus()}update(){this.findFocusableItems();for(const e of this.focusableItems)e.isFocusable()&&this.updateNeighbors(e)}moveFocus(e){if(this.currentlyFocusedItem){var t=null;0===e.y?t=e.x>0?this.currentlyFocusedItem.getRightFocusItemIndex():this.currentlyFocusedItem.getLeftFocusItemIndex():0===e.x&&(t=e.y>0?this.currentlyFocusedItem.getTopFocusItemIndex():this.currentlyFocusedItem.getBottomFocusItemIndex()),null!==t&&this.setCurrentFocusItem(t)}else this.focusableItems.length>0&&this.setCurrentFocusItem(0)}updateNeighbors(e){const t=e.getMetrics(),s=this.focusableItems.length;let n,o,c,a;for(var i=0;i<s;i++){var r=this.getFocusableItem(i);if(!r.isFocusable()||r===e)continue;const s=r.getMetrics(),u=this.getTopDistance(t,s),l=this.getBottomDistance(t,s),h=this.getLeftDistance(t,s),m=this.getRightDistance(t,s);null!==u&&(void 0===n||n>u)&&(n=u,e.setTopFocusItemIndex(i)),null!==l&&(void 0===o||o>l)&&(o=l,e.setBottomFocusItemIndex(i)),null!==h&&(void 0===c||c>h)&&(c=h,e.setLeftFocusItemIndex(i)),null!==m&&(void 0===a||a>m)&&(a=m,e.setRightFocusItemIndex(i))}}verticalDistance(e,s,n,o){if(n.bottom>o.top)return null;const c=Math.abs(e.center.x-s.left),a=Math.abs(e.center.x-s.right),i=Math.min(Math.abs(e.center.x-s.left),Math.abs(e.center.x-s.center.x),Math.abs(e.center.x-s.right)),r=o.center.y-n.center.y,u=Math.atan(r/c)*(180/Math.PI),l=Math.atan(r/a)*(180/Math.PI);return u>=0&&l<=180?t.calcDistance(i,r):null}getTopDistance(e,t){return this.verticalDistance(e,t,t,e)}getBottomDistance(e,t){return this.verticalDistance(e,t,e,t)}horizontalDistance(e,s,n,o){if(n.right>o.left)return null;const c=Math.abs(e.center.y-s.top),a=Math.abs(e.center.y-s.bottom),i=o.center.x-n.center.x,r=Math.min(Math.abs(e.center.y-s.top),Math.abs(e.center.y-s.center.y),Math.abs(e.center.y-s.bottom));var u=Math.atan(i/c)*(180/Math.PI),l=Math.atan(i/a)*(180/Math.PI);return u>=0&&l<=180?t.calcDistance(i,r):null}getLeftDistance(e,t){return this.horizontalDistance(e,t,t,e)}onKeyDown(e){switch(e.keyCode){case 9:break;case 37:e.preventDefault(),this.moveFocus({x:-1,y:0});break;case 38:e.preventDefault(),this.moveFocus({x:0,y:1});break;case 39:e.preventDefault(),this.moveFocus({x:1,y:0});break;case 40:e.preventDefault(),this.moveFocus({x:0,y:-1});break;case 13:case 32:e.preventDefault(),this.currentlyFocusedItem&&this.currentlyFocusedItem.onItemClickStateChange(!0)}}onKeyUp(e){switch(e.keyCode){case 13:e.preventDefault(),this.currentlyFocusedItem&&this.currentlyFocusedItem.onItemClickStateChange(!1)}}};
+
+
+},{"./_focusable-item":"../node_modules/@gauntface/dpad-nav/build/node-lib/_focusable-item.js","./_calc-distance":"../node_modules/@gauntface/dpad-nav/build/node-lib/_calc-distance.js"}],"../node_modules/@gauntface/dpad-nav/build/node-lib/debug-controller.js":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DebugController=void 0;const e=require("./_calc-distance"),t=["#1abc9c","#2ecc71","#3498db","#9b59b6","#34495e","#f1c40f","#e67e22","#e74c3c","#ecf0f1","#95a5a6"];exports.DebugController=class{constructor(e){this.clearDisplay=function(){const e=document.querySelectorAll(".dpad-debugger-line");for(const t of e)t.remove()},e||console.error("Unable to debug since the dpad controller is not defined."),this.dpad=e,this.debugMode=!1}setDebugMode(e){this.debugMode=e,this.updateDisplay()}toggleDebugMode(){this.debugMode=!this.debugMode,this.updateDisplay()}updateDisplay(){if(this.clearDisplay(),!this.debugMode)return;const e=this.dpad.getFocusableItems();for(let t=0;t<e.length;t++){const s=e[t];s.isFocusable()&&this.printDebugLinesForItem(t,s)}}printDebugLinesForItem(s,c){const n=t[s%t.length],o=c.getMetrics(),i=c.getTopFocusItemIndex();if(null!==i){const t=this.dpad.getFocusableItem(i).getMetrics(),s=t.center.x-o.center.x,c=o.top-t.center.y,r=180*Math.atan2(s,c)/Math.PI+180;this.printDebugLine(e.calcDistance(s,c),o.center.x-5,o.top,n,r)}const r=c.getBottomFocusItemIndex();if(null!==r){const t=this.dpad.getFocusableItem(r).getMetrics(),s=o.center.x-t.center.x,c=t.center.y-o.bottom,i=180*Math.atan2(s,c)/Math.PI+360;this.printDebugLine(e.calcDistance(s,c),o.center.x+5,o.bottom,n,i)}const a=c.getLeftFocusItemIndex();if(null!==a){const t=this.dpad.getFocusableItem(a).getMetrics(),s=t.center.x-o.left,c=o.center.y-t.center.y,i=180*Math.atan2(s,c)/Math.PI+180;this.printDebugLine(e.calcDistance(s,c),o.left,o.center.y+5,n,i)}const l=c.getRightFocusItemIndex();if(null!==l){const t=this.dpad.getFocusableItem(l).getMetrics(),s=t.center.x-o.right,c=o.center.y-t.center.y,i=180*Math.atan2(s,c)/Math.PI+180;this.printDebugLine(e.calcDistance(s,c),o.right,o.center.y-5,n,i)}}printDebugLine(e,t,s,c,n){const o=document.createElement("div");o.classList.add("dpad-debugger-line"),o.classList.add("marker"),o.classList.add("start"),o.style.position="absolute",o.style.width="5px",o.style.height=e+"px",o.style.left=t+"px",o.style.top=s+"px",o.style.backgroundColor=c,o.style.transform="rotate("+n+"deg)",o.style.transformOrigin="0% 0%",document.body.appendChild(o)}};
+
+
+},{"./_calc-distance":"../node_modules/@gauntface/dpad-nav/build/node-lib/_calc-distance.js"}],"../node_modules/@gauntface/dpad-nav/build/node-lib/index.js":[function(require,module,exports) {
+"use strict";var e=Object.create?function(e,r,t,o){void 0===o&&(o=t),Object.defineProperty(e,o,{enumerable:!0,get:function(){return r[t]}})}:function(e,r,t,o){void 0===o&&(o=t),e[o]=r[t]},r=function(r,t){for(var o in r)"default"===o||t.hasOwnProperty(o)||e(t,r,o)};Object.defineProperty(exports,"__esModule",{value:!0}),r(require("./dpad-controller"),exports),r(require("./debug-controller"),exports);
+
+
+},{"./dpad-controller":"../node_modules/@gauntface/dpad-nav/build/node-lib/dpad-controller.js","./debug-controller":"../node_modules/@gauntface/dpad-nav/build/node-lib/debug-controller.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("bootstrap/dist/css/bootstrap.css");
@@ -101304,8 +101418,16 @@ var _youtubePlayer = _interopRequireDefault(require("youtube-player"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Player
+var _require = require('@gauntface/dpad-nav'),
+    DpadController = _require.DpadController,
+    DebugController = _require.DebugController; // Create a new dpad controller
+
+
+var dpad = new DpadController(); // Call update to get the focusable items in the DOM
+
+dpad.update(); // Player
 // m3u8
+
 var mplayer = (0, _video.default)("m3u8-player");
 
 var playm3u8 = function playm3u8(url) {
@@ -101338,11 +101460,13 @@ Tab Index
 6 = m3u8 player
 7 = youtube player
 8 = language Tab
+9 = Landing Page
 */
 
 
-var tabID = ["#hom-tab", "#fav-tab", "#cat-tab", "#mov-tab", "#arc-tab", "#pro-tab", "#pla-tab", "#you-tab", "#lan-tab"];
-var butID = ["#hom-button", "#fav-button", "#cat-button", "#mov-button", "#arc-button", "#pro-button", "#pla-button", "#you-button", "#lan-button"];
+var tabID = ["#hom-tab", "#fav-tab", "#cat-tab", "#mov-tab", "#arc-tab", "#pro-tab", "#pla-tab", "#you-tab", "#lan-tab", "#lad-tab"];
+var butID = ["#hom-button", "#fav-button", "#cat-button", "#mov-button", "#arc-button", "#pro-button", "#pla-button", "#you-button", "#lan-button", "#lad-button"];
+var lanID = ["#hom-lan", "#fav-lan", "#cat-lan", "#mov-lan", "#arc-lan", "#pro-lan"];
 
 var tabChanger = function tabChanger(index) {
   if (index != 6) {
@@ -101362,6 +101486,8 @@ var tabChanger = function tabChanger(index) {
       (0, _jquery.default)(butID[i]).removeClass("nav-item-active");
     }
   }
+
+  dpad.update();
 };
 
 var tabEventAdder = function tabEventAdder() {
@@ -101374,11 +101500,24 @@ var tabEventAdder = function tabEventAdder() {
   for (var i in butID) {
     _loop(i);
   }
+};
+
+var lanEventAdder = function lanEventAdder() {
+  var _loop2 = function _loop2(i) {
+    (0, _jquery.default)(lanID[i]).on("click", function () {
+      tabChanger(i);
+    });
+  };
+
+  for (var i in butID) {
+    _loop2(i);
+  }
 }; // Initialization
 
 
-tabChanger(0);
-tabEventAdder(); // Fetching from API
+tabChanger(9);
+tabEventAdder();
+lanEventAdder(); // Fetching from API
 
 _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", function (data) {
   console.log(data.content);
@@ -101404,23 +101543,24 @@ _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", funct
   var languages_container = ["<div><p class=\"p-3\">Live TV Watch Your Language</p><div class=\"card-container\">"];
 
   for (var _i in languages) {
-    languages_container.push("<div id=\"".concat(languages[_i], "_lanbutton\" class=\"card language-box\">").concat(languages[_i], "</div>"));
+    languages_container.push("<div id=\"".concat(languages[_i], "_lanbutton\" tabindex=\"0\" class=\"dpad-focusable language-box\">").concat(languages[_i], "</div>"));
   }
 
   languages_container.push("</div></p></div>");
   (0, _jquery.default)('#home-dyn').append(languages_container.join(''));
 
-  var _loop2 = function _loop2(_i2) {
+  var _loop3 = function _loop3(_i2) {
     (0, _jquery.default)("#".concat(languages[_i2], "_lanbutton")).on("click", function () {
       tabChanger(8);
       (0, _jquery.default)("#language-tab-language").html(languages[_i2]);
       (0, _jquery.default)(".langCardsAll").hide();
       (0, _jquery.default)(".langCard_".concat(languages[_i2])).show();
+      dpad.update();
     });
   };
 
   for (var _i2 in languages) {
-    _loop2(_i2);
+    _loop3(_i2);
   } // Adding genres
 
 
@@ -101433,8 +101573,8 @@ _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", funct
   geners_container.push("</div>");
   (0, _jquery.default)('#home-dyn').append(geners_container.join('')); // Adding content to genres
 
-  var _loop3 = function _loop3(_i4) {
-    (0, _jquery.default)("#".concat(data.content[_i4].data.genres, "_homecards")).append("\n            <div id=\"".concat(data.content[_i4].data.genres, "_").concat(_i4, "\" class=\"card bg-dark text-white\">\n            <img style=\"width: 16em; height: 10em;\" src=\"https://www.sunrizeiptv.com").concat(data.content[_i4].data.logo_location, "\" alt=\"\" class=\"card-img\" />\n            <div class=\"card-img-overlay\">\n                <h5 class=\"live-title card-title float-right\"><i class=\"far fa-dot-circle\"></i>LIVE</h5>\n            </div>\n            </div>\n        "));
+  var _loop4 = function _loop4(_i4) {
+    (0, _jquery.default)("#".concat(data.content[_i4].data.genres, "_homecards")).append("\n            <div id=\"".concat(data.content[_i4].data.genres, "_").concat(_i4, "\" tabindex=\"0\" class=\"dpad-focusable card bg-dark text-white\">\n            <img style=\"width: 16em; height: 10em;\" src=\"https://www.sunrizeiptv.com").concat(data.content[_i4].data.logo_location, "\" alt=\"\" class=\"card-img\" />\n            <div class=\"card-img-overlay\">\n                <h5 class=\"live-title card-title float-right\"><i class=\"far fa-dot-circle\"></i>LIVE</h5>\n            </div>\n            </div>\n        "));
     (0, _jquery.default)("#".concat(data.content[_i4].data.genres, "_").concat(_i4)).on("click", function () {
       if (data.content[_i4].data.is_youtube == "yes") {
         playyout(data.content[_i4].data.live_link);
@@ -101443,7 +101583,7 @@ _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", funct
       }
     }); // Adding to language
 
-    (0, _jquery.default)("#language-all-container").append("\n            <div id=\"".concat(data.content[_i4].data.genres, "_").concat(_i4, "_all\" class=\"card bg-dark text-white langCardsAll langCard_").concat(data.content[_i4].data.language, "\">\n            <img style=\"width:100%; height:100%;\" src=\"https://www.sunrizeiptv.com").concat(data.content[_i4].data.logo_location, "\" alt=\"\" class=\"card-img\" />\n            <div class=\"card-img-overlay\">\n                <h5 class=\"live-title card-title float-right\"><i class=\"far fa-dot-circle\"></i>LIVE</h5>\n            </div>\n            </div>\n        "));
+    (0, _jquery.default)("#language-all-container").append("\n            <div id=\"".concat(data.content[_i4].data.genres, "_").concat(_i4, "_all\" tabindex=\"0\" class=\"dpad-focusable card bg-dark text-white langCardsAll langCard_").concat(data.content[_i4].data.language, "\">\n            <img style=\"width:100%; height:100%;\" src=\"https://www.sunrizeiptv.com").concat(data.content[_i4].data.logo_location, "\" alt=\"\" class=\"card-img\" />\n            <div class=\"card-img-overlay\">\n                <h5 class=\"live-title card-title float-right\"><i class=\"far fa-dot-circle\"></i>LIVE</h5>\n            </div>\n            </div>\n        "));
     (0, _jquery.default)("#".concat(data.content[_i4].data.genres, "_").concat(_i4, "_all")).on("click", function () {
       if (data.content[_i4].data.is_youtube == "yes") {
         playyout(data.content[_i4].data.live_link);
@@ -101454,10 +101594,10 @@ _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", funct
   };
 
   for (var _i4 in data.content) {
-    _loop3(_i4);
+    _loop4(_i4);
   }
 });
-},{"bootstrap/dist/css/bootstrap.css":"../node_modules/bootstrap/dist/css/bootstrap.css","bootstrap/dist/js/bootstrap.js":"../node_modules/bootstrap/dist/js/bootstrap.js","@fortawesome/fontawesome-free/css/all.css":"../node_modules/@fortawesome/fontawesome-free/css/all.css","@fortawesome/fontawesome-free/js/all.js":"../node_modules/@fortawesome/fontawesome-free/js/all.js","jquery":"../node_modules/jquery/dist/jquery.js","./style.scss":"style.scss","videojs-contrib-hls":"../node_modules/videojs-contrib-hls/es5/videojs-contrib-hls.js","video.js/dist/video-js.css":"../node_modules/video.js/dist/video-js.css","video.js/dist/video.js":"../node_modules/video.js/dist/video.js","youtube-player":"../node_modules/youtube-player/dist/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"bootstrap/dist/css/bootstrap.css":"../node_modules/bootstrap/dist/css/bootstrap.css","bootstrap/dist/js/bootstrap.js":"../node_modules/bootstrap/dist/js/bootstrap.js","@fortawesome/fontawesome-free/css/all.css":"../node_modules/@fortawesome/fontawesome-free/css/all.css","@fortawesome/fontawesome-free/js/all.js":"../node_modules/@fortawesome/fontawesome-free/js/all.js","jquery":"../node_modules/jquery/dist/jquery.js","./style.scss":"style.scss","videojs-contrib-hls":"../node_modules/videojs-contrib-hls/es5/videojs-contrib-hls.js","video.js/dist/video-js.css":"../node_modules/video.js/dist/video-js.css","video.js/dist/video.js":"../node_modules/video.js/dist/video.js","youtube-player":"../node_modules/youtube-player/dist/index.js","@gauntface/dpad-nav":"../node_modules/@gauntface/dpad-nav/build/node-lib/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -101485,7 +101625,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55957" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57572" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

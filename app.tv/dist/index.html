@@ -12,32 +12,34 @@
             <a class="navbar-brand" href="#"><i class="fas fa-tv"></i> APP.TV</a>
 
             <form id="search-form" class="form-inline float-right">
-                <button class="btn btn-outline-light my-2 my-sm-0 float-right" type="submit">
+                <button class="btn btn-outline-light my-2 my-sm-0 float-right dpad-focusable" type="submit" tabindex="0">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
         </nav>
         <!-- Top Secondary Nav -->
-        <nav id="top-second-nav" class="navbar navbar-light bg-light">
-            <button id="hom-button" class="btn nav-item nav-item-active">
-                <i class="fas fa-tv"></i><br>Live
-            </button>
-            <button id="fav-button" class="btn nav-item">
-                <i class="fas fa-heart"></i><br>Favourites
-            </button>
-            <button id="cat-button" class="btn nav-item">
-                <i class="fas fa-history"></i><br>Catch-Up
-            </button>
-            <button id="mov-button" class="btn nav-item">
-                <i class="fas fa-film"></i><br>Movies
-            </button>
-            <button id="arc-button" class="btn nav-item">
-                <i class="fas fa-archive"></i><br>Archive
-            </button>
-            <button id="pro-button" class="btn nav-item">
-                <i class="fas fa-user-circle"></i><br>Profile
-            </button>
-        </nav>
+        <div id="navdiv">
+            <nav id="top-second-nav" class="navbar sticky-top navbar-light bg-light">
+                <button id="hom-button" tabindex="0" class="btn nav-item dpad-focusable">
+                    <i class="fas fa-tv"></i><br>Live
+                </button>
+                <button id="fav-button" tabindex="0" class="btn nav-item dpad-focusable">
+                    <i class="fas fa-heart"></i><br>Favourites
+                </button>
+                <button id="cat-button" tabindex="0" class="btn nav-item dpad-focusable">
+                    <i class="fas fa-history"></i><br>Catch-Up
+                </button>
+                <button id="mov-button" tabindex="0" class="btn nav-item dpad-focusable">
+                    <i class="fas fa-film"></i><br>Movies
+                </button>
+                <button id="arc-button" tabindex="0" class="btn nav-item dpad-focusable">
+                    <i class="fas fa-archive"></i><br>Archive
+                </button>
+                <button id="pro-button" tabindex="0" class="btn nav-item dpad-focusable">
+                    <i class="fas fa-user-circle"></i><br>Profile
+                </button>
+            </nav>
+        </div>
 
         <!-- Home Content -->
         <div id="hom-tab">
@@ -86,8 +88,7 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <div id="home-dyn">
-            </div>
+            <div id="home-dyn"></div>
         </div>
 
         <!-- Favourite Content -->
@@ -589,8 +590,32 @@
         <!-- Language Tab -->
         <div id="lan-tab">
             <p id="language-tab-language" class="p-3">Your Language</p>
-            <div id="language-all-container" class="cardset">
+            <div id="language-all-container" class="cardset"></div>
+        </div>
+
+        <!-- Landing Page -->
+        <div id="lad-tab">
+            <div class="cardset">
+                <div tabindex="0" id="hom-lan" class="card dpad-focusable"><i class="fas fa-tv"></i><br>Live</div>
+                <div tabindex="0" id="fav-lan" class="card dpad-focusable">
+                    <i class="fas fa-heart"></i><br>Favourites
+                </div>
+                <div tabindex="0" id="cat-lan" class="card dpad-focusable">
+                    <i class="fas fa-history"></i><br>Catch-Up
+                </div>
+                <div tabindex="0" id="mov-lan" class="card dpad-focusable"><i class="fas fa-film"></i><br>Movies</div>
+                <div tabindex="0" id="arc-lan" class="card dpad-focusable">
+                    <i class="fas fa-archive"></i><br>Archive
+                </div>
+                <div tabindex="0" id="pro-lan" class="card dpad-focusable">
+                    <i class="fas fa-user-circle"></i><br>Profile
+                </div>
             </div>
+            <center>
+                <button class="btn btn-danger dpad-focusable" tabindex="0">
+                    Log Out <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </center>
         </div>
 
         <script src="https://www.nkassets.tk/app.tv/dist/main.1f19ae8e.js"></script>
