@@ -101596,6 +101596,15 @@ _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", funct
   for (var _i4 in data.content) {
     _loop4(_i4);
   }
+}); // dpad active element
+
+
+document.addEventListener("keyup", function (event) {
+  //alert(event.keyCode);
+  if (event.keyCode === 13) {
+    var a = document.activeElement;
+    a.click();
+  }
 });
 },{"bootstrap/dist/css/bootstrap.css":"../node_modules/bootstrap/dist/css/bootstrap.css","bootstrap/dist/js/bootstrap.js":"../node_modules/bootstrap/dist/js/bootstrap.js","@fortawesome/fontawesome-free/css/all.css":"../node_modules/@fortawesome/fontawesome-free/css/all.css","@fortawesome/fontawesome-free/js/all.js":"../node_modules/@fortawesome/fontawesome-free/js/all.js","jquery":"../node_modules/jquery/dist/jquery.js","./style.scss":"style.scss","videojs-contrib-hls":"../node_modules/videojs-contrib-hls/es5/videojs-contrib-hls.js","video.js/dist/video-js.css":"../node_modules/video.js/dist/video-js.css","video.js/dist/video.js":"../node_modules/video.js/dist/video.js","youtube-player":"../node_modules/youtube-player/dist/index.js","@gauntface/dpad-nav":"../node_modules/@gauntface/dpad-nav/build/node-lib/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -101625,7 +101634,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57572" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49912" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
