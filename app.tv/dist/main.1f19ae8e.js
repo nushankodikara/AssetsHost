@@ -101418,7 +101418,7 @@ var _youtubePlayer = _interopRequireDefault(require("youtube-player"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _require = require('@gauntface/dpad-nav'),
+var _require = require("@gauntface/dpad-nav"),
     DpadController = _require.DpadController,
     DebugController = _require.DebugController; // Create a new dpad controller
 
@@ -101517,19 +101517,62 @@ var lanEventAdder = function lanEventAdder() {
 
 tabChanger(9);
 tabEventAdder();
-lanEventAdder(); // Fetching from API
+lanEventAdder(); // Fetching from favourites
+
+_jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getMyfavourites", function (data) {
+  var _loop3 = function _loop3(i) {
+    console.log(data.data[i]);
+    (0, _jquery.default)("#fav-cards").append("\n        <div id=\"".concat(data.data[i].data.genres, "_").concat(i, "_all_fav\" tabindex=\"0\" class=\"dpad-focusable card bg-dark text-white langCardsAll langCard_").concat(data.data[i].data.language, "\">\n        <img style=\"width:100%; height:100%;\" src=\"https://www.sunrizeiptv.com").concat(data.data[i].data.logo_location, "\" alt=\"\" class=\"card-img\" />\n        <div class=\"card-img-overlay\">\n            <h5 class=\"live-title card-title float-right\"><i class=\"far fa-dot-circle\"></i>LIVE</h5>\n        </div>\n        </div>"));
+    (0, _jquery.default)("#".concat(data.data[i].data.genres, "_").concat(i, "_all_fav")).on("click", function () {
+      if (data.data[i].data.is_youtube == "yes") {
+        playyout(data.data[i].data.live_link);
+      } else {
+        playm3u8(data.data[i].data.live_link);
+      }
+    });
+  };
+
+  for (var i in data.data) {
+    _loop3(i);
+  }
+}); // Fetching from catchup
+
+
+_jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getCatchupChannels", function (data) {
+  var _loop4 = function _loop4(i) {
+    console.log(data.content[i]);
+    (0, _jquery.default)("#catchup-cards").append("\n        <div id=\"".concat(data.content[i].data.genres, "_").concat(i, "_all_catch\" tabindex=\"0\" class=\"dpad-focusable card bg-dark text-white langCardsAll langCard_").concat(data.content[i].data.language, "\">\n        <img style=\"width:100%; height:100%;\" src=\"https://www.sunrizeiptv.com").concat(data.content[i].data.logo_location, "\" alt=\"\" class=\"card-img\" />\n        <div class=\"card-img-overlay\">\n            <h5 class=\"live-title card-title float-right\"><i class=\"far fa-dot-circle\"></i>LIVE</h5>\n        </div>\n        </div>"));
+    (0, _jquery.default)("#".concat(data.content[i].data.genres, "_").concat(i, "_all_catch")).on("click", function () {
+      if (data.content[i].data.is_youtube == "yes") {
+        playyout(data.content[i].data.live_link);
+      } else {
+        playm3u8(data.content[i].data.live_link);
+      }
+    });
+  };
+
+  for (var i in data.content) {
+    _loop4(i);
+  }
+}); // Fetching from Sliders : home & movies to be filled
+
+
+_jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getSliders", function (data) {
+  for (var i in data.data) {
+    for (var j in data.data[i].data.home) {
+      console.log(data.data[i].data.home[j]);
+      (0, _jquery.default)("#homeCarouselIndicators").append("\n            <li data-target=\"#carouselExampleIndicators\"\n                        data-slide-to=\"".concat(j, "\"\n                        class=\"active\">"));
+      (0, _jquery.default)("#homeCarouselItemHolder").append("\n            <div class=\"carousel-item ".concat(j == 0 ? "active" : "", "\"><img src=\"").concat(data.data[i].data.home[j], "\" alt=\"\" class=\"d-block w-100\"></div>\n            "));
+    }
+  }
+}); // Fetching from API : home
+
 
 _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", function (data) {
-  console.log(data.content);
   var geners = [];
   var languages = [];
 
   for (var i in data.content) {
-    // console.log(data.content[i].data.name);
-    // console.log(data.content[i].data.language);
-    console.log(data.content[i].data.genres); // console.log(data.content[i].data.live_link);
-    // console.log(data.content[i].data.is_youtube);
-
     if (!geners.includes(data.content[i].data.genres)) {
       geners.push(data.content[i].data.genres);
     }
@@ -101547,9 +101590,9 @@ _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", funct
   }
 
   languages_container.push("</div></p></div>");
-  (0, _jquery.default)('#home-dyn').append(languages_container.join(''));
+  (0, _jquery.default)("#home-dyn").append(languages_container.join(""));
 
-  var _loop3 = function _loop3(_i2) {
+  var _loop5 = function _loop5(_i2) {
     (0, _jquery.default)("#".concat(languages[_i2], "_lanbutton")).on("click", function () {
       tabChanger(8);
       (0, _jquery.default)("#language-tab-language").html(languages[_i2]);
@@ -101560,7 +101603,7 @@ _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", funct
   };
 
   for (var _i2 in languages) {
-    _loop3(_i2);
+    _loop5(_i2);
   } // Adding genres
 
 
@@ -101571,9 +101614,9 @@ _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", funct
   }
 
   geners_container.push("</div>");
-  (0, _jquery.default)('#home-dyn').append(geners_container.join('')); // Adding content to genres
+  (0, _jquery.default)("#home-dyn").append(geners_container.join("")); // Adding content to genres
 
-  var _loop4 = function _loop4(_i4) {
+  var _loop6 = function _loop6(_i4) {
     (0, _jquery.default)("#".concat(data.content[_i4].data.genres, "_homecards")).append("\n            <div id=\"".concat(data.content[_i4].data.genres, "_").concat(_i4, "\" tabindex=\"0\" class=\"dpad-focusable card bg-dark text-white\">\n            <img style=\"width: 16em; height: 10em;\" src=\"https://www.sunrizeiptv.com").concat(data.content[_i4].data.logo_location, "\" alt=\"\" class=\"card-img\" />\n            <div class=\"card-img-overlay\">\n                <h5 class=\"live-title card-title float-right\"><i class=\"far fa-dot-circle\"></i>LIVE</h5>\n            </div>\n            </div>\n        "));
     (0, _jquery.default)("#".concat(data.content[_i4].data.genres, "_").concat(_i4)).on("click", function () {
       if (data.content[_i4].data.is_youtube == "yes") {
@@ -101594,7 +101637,7 @@ _jquery.default.getJSON("https://cnwdev.in/mediaapp/api_live/getChannels", funct
   };
 
   for (var _i4 in data.content) {
-    _loop4(_i4);
+    _loop6(_i4);
   }
 }); // dpad active element
 
@@ -101634,7 +101677,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49912" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49756" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
