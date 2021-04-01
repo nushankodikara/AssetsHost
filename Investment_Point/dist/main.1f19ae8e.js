@@ -54172,15 +54172,15 @@ var app = _app.default.initializeApp({
 var provider = new _app.default.auth.GoogleAuthProvider();
 
 var googleSignin = function googleSignin() {
-  _app.default.auth().signInWithPopup(provider).then(function (result) {
+  _app.default.auth().signInWithRedirect(provider).then(function () {
+    return _app.default.auth().getRedirectResult();
+  }).then(function (result) {
     var credential = result.credential;
     var token = credential.accessToken;
     var user = result.user;
   }).catch(function (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
-    var email = error.email;
-    var credential = error.credential;
     alert(errorMessage);
   });
 };
@@ -54344,7 +54344,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52258" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64974" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
