@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Investment Point</title>
+    <link rel="stylesheet" href="https://www.nkassets.tk/Investment_Point/dist/main.1f19ae8e.css"></head>
+    <body>
+        <div class="splash">
+            <img src="https://www.nkassets.tk/Investment_Point/dist/splash.393dc243.png" alt="">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div class="beforeloginPage">
+            <div class="toplogo">
+                <img src="https://www.nkassets.tk/Investment_Point/dist/logo.de01bb0e.png" alt="">
+            </div>
+            <div class="topButtons">
+                <button id="googleLogin" class="btn">
+                    <i class="fab fa-google"></i> Continue With Google
+                </button>
+                <button id="mobileLogin" class="btn">
+                    <i class="fas fa-phone-alt"></i> Continue With Mobile Number
+                </button>
+                <br><br>
+                <form style="display: none;" id="mobileForm" onsubmit="return false;">
+                    <div class="form-group">
+                        <input type="text" required="" class="form-control text" name="" id="mobileIn" aria-describedby="helpId" placeholder="+91 Enter Mobile"><input type="submit" value="Send Code" class="btn btn-primary">
+                    </div>
+                </form>
+                <form style="display: none;" id="codeForm" onsubmit="return false;">
+                    <div class="form-group">
+                        <input type="number" required="" class="form-control text" name="" id="codeIn" aria-describedby="helpId" placeholder="Verification Code"><input type="submit" value="Verify" class="btn btn-primary">
+                    </div>
+                </form>
+                <p>
+                    By continuing, You are <a href="https://nikhilbhatt.in/agreement/">agreeing</a> to our terms of use and
+                    privacy policies.
+                </p>
+            </div>
+            <div class="bottomButtons">
+                <div>
+                    <button onclick="window.open('https://nikhilbhatt.in/terms-condition/')" class="btn btn-secondary">Terms of Use</button>
+                    <button onclick="window.open('https://nikhilbhatt.in/privacy-policy/')" class="btn btn-secondary">Privacy Policy</button>
+                </div>
+            </div>
+        </div>
+        <div class="afterloginPage">
+            <div class="sidenav">
+                <h3 id="closeNav"><i class="fas fa-times float-right"></i></h3>
+                <hr>
+                <img src="https://www.nkassets.tk/Investment_Point/dist/logo.de01bb0e.png" style="width:100%;" alt="">
+                <hr>
+                <ul>
+                    <li><i class="fas fa-home"></i> Dashboard</li>
+                    <li><i class="fas fa-times"></i> Remove Ads</li>
+                    <li><i class="fas fa-bell"></i> Notification Settings</li>
+                    <li><i class="fas fa-address-card"></i> Contact Us</li>
+                    <li><i class="fas fa-comment-alt"></i> Feedback</li>
+                    <li><i class="fas fa-share-alt"></i> Share</li>
+                    <li id="signOut">
+                        <i class="fas fa-sign-in-alt"></i> Sign Out
+                    </li>
+                    <li><a href="https://nikhilbhatt.in/terms-condition/"><i class="far fa-clipboard"></i> Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="topnavbar">
+                <div id="menu"><i class="fas fa-bars"></i></div>
+                <div id="title"><p>Dashboard</p></div>
+                <div id="noti"><i class="fas fa-bell"></i></div>
+            </div>
+            <div id="carousal">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div id="topCarousel" class="carousel-inner"></div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div id="tableofLnks">
+                <button id="linkButton1" type="button" class="btn btn-light">
+                    <i class="fas fa-chart-bar"></i><br>Market Trend
+                </button>
+                <button id="linkButton2" type="button" class="btn btn-light">
+                    <i class="fas fa-chart-bar"></i><br>Nifty Range
+                </button>
+                <button id="linkButton3" type="button" class="btn btn-light">
+                    <i class="fas fa-chart-bar"></i><br>Bank Nifty Range
+                </button>
+                <button id="linkButton4" type="button" class="btn btn-light">
+                    <i class="fas fa-box"></i><br>Silver
+                </button>
+                <button id="linkButton5" type="button" class="btn btn-light">
+                    <i class="fas fa-box"></i><br>Gold
+                </button>
+                <button id="linkButton6" type="button" class="btn btn-light">
+                    <i class="fas fa-box"></i><br>Platinum
+                </button>
+                <button id="linkButton7" type="button" class="btn btn-light">
+                    <i class="fas fa-globe-asia"></i><br>Visit Website
+                </button>
+                <button id="linkButton8" type="button" class="btn btn-light">
+                    <i class="fab fa-youtube"></i><br>Visit Youtube
+                </button>
+            </div>
+            <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+                <div id="ImageC" class="carousel-inner"></div>
+                <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <script src="https://www.nkassets.tk/Investment_Point/dist/main.1f19ae8e.js"></script>
+    </body>
+</html>
