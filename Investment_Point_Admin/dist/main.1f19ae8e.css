@@ -15088,6 +15088,10 @@ body .alogin .card div .bottom {
   color: #ffffff;
   padding: 0.2em;
 }
+body .alogin .carousel-item div .bottom .btn,
+body .alogin .card div .bottom .btn {
+  width: 2.5em;
+}
 body .alogin .carousel-item div .bottom .redtext,
 body .alogin .card div .bottom .redtext {
   color: #ff5454;

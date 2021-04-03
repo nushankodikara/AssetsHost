@@ -54162,15 +54162,29 @@ var loggedIn = function loggedIn() {
     var data = snapshot.val();
     var dataAR = [];
     var num = 0;
+    var num2 = 0;
 
     for (var i in data) {
-      dataAR.push("\n            <div class=\"carousel-item\">\n                <div>\n                    <div class=\"pill ".concat(data[i].trend == "Positive" ? "pill-green" : "pill-red", "\">\n                    ").concat(data[i].trend, "\n                    </div>\n                    <div class=\"top\">\n                        <p>\n                            ").concat(data[i].Name, "\n                        </p>\n                        <p>").concat(data[i].time, "</p>\n                    </div>\n                    <div class=\"bottom\">\n                        <table>\n                            <tr>\n                                <th>TARGET 1</th>\n                                <th>TARGET 2</th>\n                            </tr>\n                            <tr>\n                                <td>").concat(data[i].target1, "</td>\n                                <td>").concat(data[i].target2, "</td>\n                            </tr>\n                            <tr>\n                                <th>TARGET 3</th>\n                                <th class=\"redtext\">STOP LOSS</th>\n                            </tr>\n                            <tr>\n                                <td>").concat(data[i].target3, "</td>\n                                <td class=\"redtext\">").concat(data[i].stopLoss, "</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>"));
+      dataAR.push("\n            <div class=\"carousel-item\">\n                <div>\n                    <div class=\"pill ".concat(data[i].trend == "Positive" ? "pill-green" : "pill-red", "\">\n                    ").concat(data[i].trend, "\n                    </div>\n                    <div class=\"top\">\n                        <p>\n                            ").concat(data[i].Name, "\n                        </p>\n                        <p>").concat(data[i].time, "</p>\n                    </div>\n                    <div class=\"bottom\">\n                    <button id=\"delidea").concat(num, "\" class=\"btn btn-primary\"><i class=\"fas fa-trash-alt\"></i></button>\n                        <table>\n                            <tr>\n                                <th>TARGET 1</th>\n                                <th>TARGET 2</th>\n                            </tr>\n                            <tr>\n                                <td>").concat(data[i].target1, "</td>\n                                <td>").concat(data[i].target2, "</td>\n                            </tr>\n                            <tr>\n                                <th>TARGET 3</th>\n                                <th class=\"redtext\">STOP LOSS</th>\n                            </tr>\n                            <tr>\n                                <td>").concat(data[i].target3, "</td>\n                                <td class=\"redtext\">").concat(data[i].stopLoss, "</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>"));
       num += 1;
     }
 
     dataAR.reverse();
     (0, _jquery.default)("#topCarousel").html(dataAR.join(""));
     (0, _jquery.default)("#topCarousel .carousel-item").first().addClass("active");
+
+    var _loop = function _loop(_i) {
+      (0, _jquery.default)("#delidea".concat(num2)).on("click", function () {
+        _app.default.database().ref("topCarousal/".concat(_i)).remove();
+
+        location.reload();
+      });
+      num2 += 1;
+    };
+
+    for (var _i in data) {
+      _loop(_i);
+    }
   });
 
   var starCountRef1 = _app.default.database().ref("carouselImage/").limitToLast(10);
@@ -54190,18 +54204,18 @@ var loggedIn = function loggedIn() {
     (0, _jquery.default)("#imageC").html(dataAR.join(""));
     (0, _jquery.default)("#imageC .carousel-item").first().addClass("active");
 
-    var _loop = function _loop(_i) {
+    var _loop2 = function _loop2(_i2) {
       dataAR.push("<li data-target=\"#carouselId2\" data-slide-to=\"".concat(num2, "\"></li>"));
       (0, _jquery.default)("#delbt".concat(num2)).on("click", function () {
-        _app.default.database().ref("carouselImage/".concat(_i)).remove();
+        _app.default.database().ref("carouselImage/".concat(_i2)).remove();
 
         location.reload();
       });
       num2 += 1;
     };
 
-    for (var _i in data) {
-      _loop(_i);
+    for (var _i2 in data) {
+      _loop2(_i2);
     }
 
     dataAR.reverse();
@@ -54372,7 +54386,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58878" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63232" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
