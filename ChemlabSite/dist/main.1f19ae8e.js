@@ -24794,6 +24794,14 @@ document.addEventListener("DOMContentLoaded", function () {
     translateY: "12vh",
     width: "52vw"
   });
+  (0, _animeEs.default)({
+    targets: "#ffir01",
+    opacity: [1, 0]
+  });
+  (0, _animeEs.default)({
+    targets: "#fsec01",
+    opacity: [0, 1]
+  });
 });
 (0, _jquery.default)("#float01").mouseleave(function () {
   (0, _animeEs.default)({
@@ -24801,6 +24809,14 @@ document.addEventListener("DOMContentLoaded", function () {
     translateX: "25vw",
     translateY: "15vh",
     width: "50vw"
+  });
+  (0, _animeEs.default)({
+    targets: "#ffir01",
+    opacity: [0, 1]
+  });
+  (0, _animeEs.default)({
+    targets: "#fsec01",
+    opacity: [1, 0]
   });
 });
 (0, _jquery.default)("#float02").mouseenter(function () {
@@ -24810,6 +24826,14 @@ document.addEventListener("DOMContentLoaded", function () {
     translateY: "13vh",
     width: "52vw"
   });
+  (0, _animeEs.default)({
+    targets: "#ffir02",
+    opacity: [1, 0]
+  });
+  (0, _animeEs.default)({
+    targets: "#fsec02",
+    opacity: [0, 1]
+  });
 });
 (0, _jquery.default)("#float02").mouseleave(function () {
   (0, _animeEs.default)({
@@ -24817,6 +24841,14 @@ document.addEventListener("DOMContentLoaded", function () {
     translateX: "25vw",
     translateY: "15vh",
     width: "50vw"
+  });
+  (0, _animeEs.default)({
+    targets: "#ffir02",
+    opacity: [0, 1]
+  });
+  (0, _animeEs.default)({
+    targets: "#fsec02",
+    opacity: [1, 0]
   });
 });
 (0, _jquery.default)("#float03").mouseenter(function () {
@@ -24826,6 +24858,14 @@ document.addEventListener("DOMContentLoaded", function () {
     translateY: "14.75vh",
     width: "52vw"
   });
+  (0, _animeEs.default)({
+    targets: "#ffir03",
+    opacity: [1, 0]
+  });
+  (0, _animeEs.default)({
+    targets: "#fsec03",
+    opacity: [0, 1]
+  });
 });
 (0, _jquery.default)("#float03").mouseleave(function () {
   (0, _animeEs.default)({
@@ -24833,6 +24873,14 @@ document.addEventListener("DOMContentLoaded", function () {
     translateX: "25vw",
     translateY: "15vh",
     width: "50vw"
+  });
+  (0, _animeEs.default)({
+    targets: "#ffir03",
+    opacity: [0, 1]
+  });
+  (0, _animeEs.default)({
+    targets: "#fsec03",
+    opacity: [1, 0]
   });
 });
 (0, _jquery.default)("#float04").mouseenter(function () {
@@ -24842,6 +24890,14 @@ document.addEventListener("DOMContentLoaded", function () {
     translateY: "16vh",
     width: "52vw"
   });
+  (0, _animeEs.default)({
+    targets: "#ffir04",
+    opacity: [1, 0]
+  });
+  (0, _animeEs.default)({
+    targets: "#fsec04",
+    opacity: [0, 1]
+  });
 });
 (0, _jquery.default)("#float04").mouseleave(function () {
   (0, _animeEs.default)({
@@ -24849,6 +24905,14 @@ document.addEventListener("DOMContentLoaded", function () {
     translateX: "25vw",
     translateY: "15vh",
     width: "50vw"
+  });
+  (0, _animeEs.default)({
+    targets: "#ffir04",
+    opacity: [0, 1]
+  });
+  (0, _animeEs.default)({
+    targets: "#fsec04",
+    opacity: [1, 0]
   });
 });
 (0, _jquery.default)("#float05").mouseenter(function () {
@@ -24945,7 +25009,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53447" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50790" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

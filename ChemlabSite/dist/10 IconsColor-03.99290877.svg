@@ -2,7 +2,7 @@
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 600">
     <defs>
-        <style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#73a534;}.cls-4{fill:#73a534;}.cls-5{clip-path:url(#clip-path-2);}.cls-6{fill:#ee4036;}</style>
+        <style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#8bc53f;}.cls-4{fill:#fff;}.cls-5{clip-path:url(#clip-path-2);}.cls-6{fill:#ee4036;}</style>
         <clipPath id="clip-path">
             <polygon class="cls-1" points="215.89 446.46 131.34 300 215.89 153.54 385.01 153.54 469.56 300 385.01 446.46 215.89 446.46"/>
         </clipPath>

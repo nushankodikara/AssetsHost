@@ -14951,5 +14951,45 @@ body .modal-content {
 body .modal-content .modal-body img {
   width: 100%;
 }
+body #fsec01 {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: -50%;
+  opacity: 0;
+}
+body #fsec02 {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: -50%;
+  left: 0%;
+  opacity: 0;
+  transform: rotate(30deg);
+}
+body #fsec02 img {
+  transform: rotate(-30deg);
+}
+body #fsec03 {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: -50%;
+  left: 0%;
+  opacity: 0;
+  transform: rotate(-30deg);
+}
+body #fsec03 img {
+  transform: rotate(30deg);
+}
+body #fsec04 {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  top: 30%;
+  left: -20%;
+  opacity: 0;
+}
 
 /*# sourceMappingURL=/main.1f19ae8e.css.map */
