@@ -24647,12 +24647,12 @@ require("animejs");
 document.addEventListener("DOMContentLoaded", function () {
   (0, _animeEs.default)({
     targets: "#o01",
-    translateX: ["50vw", "25vw"],
-    translateY: ["50vh", "15vh"],
-    width: "50vw",
+    translateX: ["-50%", "-50%"],
+    translateY: ["-50%", "-50%"],
+    height: "30rem",
     opacity: [0, 1],
-    left: ["0", "0"],
-    top: ["0", "0"],
+    left: "50%",
+    top: "50%",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 500,
@@ -24660,12 +24660,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#o02",
-    translateX: ["50vw", "25vw"],
-    translateY: ["50vh", "15vh"],
-    width: "50vw",
+    translateX: ["-50%", "-50%"],
+    translateY: ["-50%", "-50%"],
+    height: "30rem",
     opacity: [0, 1],
-    left: ["0", "0"],
-    top: ["0", "0"],
+    left: "50%",
+    top: "50%",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 500,
@@ -24673,12 +24673,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#o03",
-    translateX: ["50vw", "25vw"],
-    translateY: ["50vh", "15vh"],
-    width: "50vw",
+    translateX: ["-50%", "-50%"],
+    translateY: ["-50%", "-50%"],
+    height: "30rem",
     opacity: [0, 1],
-    left: ["0", "0"],
-    top: ["0", "0"],
+    left: "50%",
+    top: "50%",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 500,
@@ -24686,12 +24686,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#o04",
-    translateX: ["50vw", "25vw"],
-    translateY: ["50vh", "15vh"],
-    width: "50vw",
+    translateX: ["-50%", "-50%"],
+    translateY: ["-50%", "-50%"],
+    height: "30rem",
     opacity: [0, 1],
-    left: ["0", "0"],
-    top: ["0", "0"],
+    left: "50%",
+    top: "50%",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 500,
@@ -24699,12 +24699,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#o05",
-    translateX: ["50vw", "25vw"],
-    translateY: ["50vh", "15vh"],
-    width: "50vw",
+    translateX: ["-50%", "-50%"],
+    translateY: ["-50%", "-50%"],
+    height: "30rem",
     opacity: [0, 1],
-    left: ["0", "0"],
-    top: ["0", "0"],
+    left: "50%",
+    top: "50%",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 500,
@@ -24712,10 +24712,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#float01",
-    translateX: ["50vw", "45vw"],
-    translateY: ["50vh", "05vh"],
+    translateX: ["-50%", "-50%"],
+    translateY: ["-50%", "-18rem"],
     opacity: [0, 1],
-    width: ["10rem", "20vw"],
+    left: "50%",
+    top: "50%",
+    width: "auto",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 250,
@@ -24723,10 +24725,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#float02",
-    translateX: ["50vw", "25vw"],
-    translateY: ["50vh", "20vh"],
+    translateX: ["-50%", "-16rem"],
+    translateY: ["-50%", "-13rem"],
     opacity: [0, 1],
-    width: ["10rem", "20vw"],
+    left: "50%",
+    top: "50%",
+    width: "auto",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 500,
@@ -24734,10 +24738,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#float03",
-    translateX: ["50vw", "25vw"],
-    translateY: ["50vh", "50vh"],
+    translateX: ["-50%", "-16rem"],
+    translateY: ["-50%", "1rem"],
     opacity: [0, 1],
-    width: ["10rem", "20vw"],
+    left: "50%",
+    top: "50%",
+    width: "auto",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 750,
@@ -24745,10 +24751,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#float04",
-    translateX: ["50vw", "45vw"],
-    translateY: ["50vh", "68vh"],
+    translateX: ["-50%", "-50%"],
+    translateY: ["-50%", "9rem"],
     opacity: [0, 1],
-    width: ["10rem", "20vw"],
+    left: "50%",
+    top: "50%",
+    width: "auto",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 1000,
@@ -24756,10 +24764,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#float05",
-    translateX: ["50vw", "60vw"],
-    translateY: ["50vh", "35vh"],
+    translateX: ["-50%", "50%"],
+    translateY: ["-50%", "-50%"],
     opacity: [0, 1],
-    width: ["10rem", "20vw"],
+    left: "50%",
+    top: "50%",
+    width: "auto",
     autoplay: true,
     easing: "easeInOutSine",
     duration: 1250,
@@ -24790,9 +24800,9 @@ document.addEventListener("DOMContentLoaded", function () {
 (0, _jquery.default)("#float01").mouseenter(function () {
   (0, _animeEs.default)({
     targets: "#o01",
-    translateX: "25vw",
-    translateY: "12vh",
-    width: "52vw"
+    translateX: "-50%",
+    translateY: "-55%",
+    height: "31rem"
   });
   (0, _animeEs.default)({
     targets: "#ffir01",
@@ -24806,9 +24816,9 @@ document.addEventListener("DOMContentLoaded", function () {
 (0, _jquery.default)("#float01").mouseleave(function () {
   (0, _animeEs.default)({
     targets: "#o01",
-    translateX: "25vw",
-    translateY: "15vh",
-    width: "50vw"
+    translateX: "-50%",
+    translateY: "-50%",
+    height: "30rem"
   });
   (0, _animeEs.default)({
     targets: "#ffir01",
@@ -24822,9 +24832,9 @@ document.addEventListener("DOMContentLoaded", function () {
 (0, _jquery.default)("#float02").mouseenter(function () {
   (0, _animeEs.default)({
     targets: "#o02",
-    translateX: "23vw",
-    translateY: "13vh",
-    width: "52vw"
+    translateX: "-55%",
+    translateY: "-55%",
+    height: "31rem"
   });
   (0, _animeEs.default)({
     targets: "#ffir02",
@@ -24838,9 +24848,9 @@ document.addEventListener("DOMContentLoaded", function () {
 (0, _jquery.default)("#float02").mouseleave(function () {
   (0, _animeEs.default)({
     targets: "#o02",
-    translateX: "25vw",
-    translateY: "15vh",
-    width: "50vw"
+    translateX: "-50%",
+    translateY: "-50%",
+    height: "30rem"
   });
   (0, _animeEs.default)({
     targets: "#ffir02",
@@ -24854,9 +24864,9 @@ document.addEventListener("DOMContentLoaded", function () {
 (0, _jquery.default)("#float03").mouseenter(function () {
   (0, _animeEs.default)({
     targets: "#o03",
-    translateX: "23vw",
-    translateY: "14.75vh",
-    width: "52vw"
+    translateX: "-55%",
+    translateY: "-45%",
+    height: "31rem"
   });
   (0, _animeEs.default)({
     targets: "#ffir03",
@@ -24870,9 +24880,9 @@ document.addEventListener("DOMContentLoaded", function () {
 (0, _jquery.default)("#float03").mouseleave(function () {
   (0, _animeEs.default)({
     targets: "#o03",
-    translateX: "25vw",
-    translateY: "15vh",
-    width: "50vw"
+    translateX: "-50%",
+    translateY: "-50%",
+    height: "30rem"
   });
   (0, _animeEs.default)({
     targets: "#ffir03",
@@ -24886,9 +24896,9 @@ document.addEventListener("DOMContentLoaded", function () {
 (0, _jquery.default)("#float04").mouseenter(function () {
   (0, _animeEs.default)({
     targets: "#o04",
-    translateX: "25vw",
-    translateY: "16vh",
-    width: "52vw"
+    translateX: "-50%",
+    translateY: "-45%",
+    height: "31rem"
   });
   (0, _animeEs.default)({
     targets: "#ffir04",
@@ -24902,9 +24912,9 @@ document.addEventListener("DOMContentLoaded", function () {
 (0, _jquery.default)("#float04").mouseleave(function () {
   (0, _animeEs.default)({
     targets: "#o04",
-    translateX: "25vw",
-    translateY: "15vh",
-    width: "50vw"
+    translateX: "-50%",
+    translateY: "-50%",
+    height: "30rem"
   });
   (0, _animeEs.default)({
     targets: "#ffir04",
@@ -24918,17 +24928,17 @@ document.addEventListener("DOMContentLoaded", function () {
 (0, _jquery.default)("#float05").mouseenter(function () {
   (0, _animeEs.default)({
     targets: "#o05",
-    translateX: "26vw",
-    translateY: "15vh",
-    width: "50vw"
+    translateX: "-45%",
+    translateY: "-50%",
+    height: "30rem"
   });
 });
 (0, _jquery.default)("#float05").mouseleave(function () {
   (0, _animeEs.default)({
     targets: "#o05",
-    translateX: "25vw",
-    translateY: "15vh",
-    width: "50vw"
+    translateX: "-50%",
+    translateY: "-50%",
+    height: "30rem"
   });
 });
 (0, _jquery.default)("#float01, #o01,#float02, #o02,#float03, #o03,#float04, #o04,#float05").click(function () {
@@ -25009,7 +25019,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50790" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61528" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
