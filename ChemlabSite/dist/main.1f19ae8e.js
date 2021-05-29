@@ -18300,7 +18300,7 @@ function getBundleURL() {
 }
 
 function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
 }
 
 exports.getBundleURL = getBundleURLCached;
@@ -23367,7 +23367,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
       });
       return acc;
     });
-    var hasRegular = 'far' in styles;
+    var hasRegular = ('far' in styles);
     _byOldName = reduce(shims, function (acc, shim) {
       var oldName = shim[0];
       var prefix = shim[1];
@@ -24247,9 +24247,7 @@ function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "funct
     return s;
   }
 
-  var Library =
-  /*#__PURE__*/
-  function () {
+  var Library = /*#__PURE__*/function () {
     function Library() {
       _classCallCheck(this, Library);
 
@@ -24833,7 +24831,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0, _animeEs.default)({
     targets: "#o02",
     translateX: "-55%",
-    translateY: "-55%",
+    translateY: "-53%",
     height: "31rem"
   });
   (0, _animeEs.default)({
@@ -24865,7 +24863,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0, _animeEs.default)({
     targets: "#o03",
     translateX: "-55%",
-    translateY: "-45%",
+    translateY: "-47%",
     height: "31rem"
   });
   (0, _animeEs.default)({
@@ -25019,7 +25017,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61528" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61942" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -25050,8 +25048,9 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
 

@@ -14993,4 +14993,13 @@ body #fsec04 {
   opacity: 0;
 }
 
+.hbicon {
+  filter: grayscale(100%) brightness(10);
+  transition: 150ms;
+}
+
+.hbicon:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
 /*# sourceMappingURL=/main.1f19ae8e.css.map */
