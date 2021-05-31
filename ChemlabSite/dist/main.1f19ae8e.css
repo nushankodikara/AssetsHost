@@ -15035,28 +15035,30 @@ body .floatheader {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 2em;
+  width: 6em;
   opacity: 0;
+  font-size: 18px;
+  font-weight: 200;
 }
 
 #head01 {
-  transform: translate(-4rem, -18rem);
+  transform: translate(-3rem, -18rem);
 }
 
 #head02 {
-  transform: translate(-23rem, -9.5rem);
+  transform: translate(-22rem, -8.8rem);
 }
 
 #head03 {
-  transform: translate(-23rem, 3rem);
+  transform: translate(-22rem, 4rem);
 }
 
 #head04 {
-  transform: translate(-2rem, 15.5rem);
+  transform: translate(-1rem, 16rem);
 }
 
 #head05 {
-  transform: translate(13rem, -2rem);
+  transform: translate(13rem, -0.5rem);
 }
 
 /*# sourceMappingURL=/main.1f19ae8e.css.map */
