@@ -24718,7 +24718,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   (0, _animeEs.default)({
     targets: "#float01",
-    translateX: ["-50%", "-5rem"],
+    translateX: ["-50%", "-4.5rem"],
     translateY: ["-50%", "-16rem"],
     opacity: [0, 1],
     left: "50%",
@@ -25009,7 +25009,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55318" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63740" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
