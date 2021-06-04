@@ -15036,7 +15036,7 @@ body .floatheader {
   transform: translate(-50%, -50%);
   width: 6em;
   opacity: 0;
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 200;
 }
 
@@ -15045,11 +15045,13 @@ body .floatheader {
 }
 
 #head02 {
-  transform: translate(-22rem, -8.8rem);
+  transform: translate(-23rem, -8.8rem);
+  text-align: right;
 }
 
 #head03 {
-  transform: translate(-22rem, 4rem);
+  transform: translate(-23rem, 4rem);
+  text-align: right;
 }
 
 #head04 {

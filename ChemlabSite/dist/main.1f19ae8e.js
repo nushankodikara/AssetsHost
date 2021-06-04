@@ -24642,6 +24642,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 require("animejs");
 
+var fs = (screen.height / 64).toString() + "px";
+(0, _jquery.default)("html").css({
+  "font-size": fs
+});
 document.addEventListener("DOMContentLoaded", function () {
   (0, _animeEs.default)({
     targets: "#o01",
@@ -25009,7 +25013,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63740" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52249" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
