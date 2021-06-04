@@ -24953,31 +24953,12 @@ document.addEventListener("DOMContentLoaded", function () {
 }); // Detail Section
 
 (0, _jquery.default)(".floatSection").mouseenter(function () {
-  (0, _animeEs.default)({
-    targets: ".desc",
-    delay: 250,
-    opacity: [0, 1]
-  });
-  (0, _animeEs.default)({
-    targets: "#o01, #o02, #o03, #o04, #o05",
-    duration: 200,
-    delay: 100,
-    easing: "easeInOutQuad",
-    opacity: [1, 0]
-  });
+  (0, _jquery.default)(".desc").fadeIn();
+  (0, _jquery.default)("#o01, #o02, #o03, #o04, #o05").fadeOut();
 });
 (0, _jquery.default)(".floatSection").mouseleave(function () {
-  (0, _animeEs.default)({
-    targets: ".desc",
-    opacity: [1, 0]
-  });
-  (0, _animeEs.default)({
-    targets: "#o01, #o02, #o03, #o04, #o05",
-    duration: 200,
-    delay: 200,
-    easing: "easeInOutQuad",
-    opacity: [0, 1]
-  });
+  (0, _jquery.default)(".desc").fadeOut();
+  (0, _jquery.default)("#o01, #o02, #o03, #o04, #o05").fadeIn();
 });
 (0, _jquery.default)("#icon01").mouseenter(function () {
   (0, _jquery.default)("#canvastowrite").html("\n    <h4>Engineering</h4>\n    <ul>\n        <li>STP Chemicals</li>\n        <li>Drain and Grease management</li>\n        <li>Boiler Chemicals</li>\n        <li>Drinking water plant chemicals</li>\n        <li>Cooling tower chemicals</li>\n        <li>Lubricants and oils</li>\n        <li>Swimming pool chemicals</li>\n    </ul>");

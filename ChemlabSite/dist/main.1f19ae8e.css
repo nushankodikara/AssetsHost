@@ -15049,7 +15049,7 @@ body #head05 {
   transform: translate(13rem, -0.5rem);
 }
 body .desc {
-  opacity: 0;
+  display: none;
   position: fixed;
   left: 50%;
   top: 50%;
