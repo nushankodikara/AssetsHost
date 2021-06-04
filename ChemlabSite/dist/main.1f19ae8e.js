@@ -24950,40 +24950,64 @@ document.addEventListener("DOMContentLoaded", function () {
     translateY: "-50%",
     height: "30rem"
   });
-});
-(0, _jquery.default)("#float01, #o01,#float02, #o02,#float03, #o03,#float04, #o04,#float05").click(function () {
-  (0, _jquery.default)("#staticBackdrop").modal("show");
-}); // Modal
+}); // Detail Section
 
-(0, _jquery.default)("#float01, #o01").on("click", function () {
-  (0, _jquery.default)("#modalImage").attr("src", "./ig(1).jpeg");
-  (0, _jquery.default)(".modal-content").css({
-    "background-color": "#8bc53f"
+(0, _jquery.default)(".floatSection").mouseenter(function () {
+  (0, _animeEs.default)({
+    targets: ".desc",
+    delay: 250,
+    opacity: [0, 1]
+  });
+  (0, _animeEs.default)({
+    targets: "#o01, #o02, #o03, #o04, #o05",
+    duration: 200,
+    delay: 100,
+    easing: "easeInOutQuad",
+    opacity: [1, 0]
   });
 });
-(0, _jquery.default)("#float02, #o02").on("click", function () {
-  (0, _jquery.default)("#modalImage").attr("src", "./ig(2).jpeg");
-  (0, _jquery.default)(".modal-content").css({
-    "background-color": "#fcb040"
+(0, _jquery.default)(".floatSection").mouseleave(function () {
+  (0, _animeEs.default)({
+    targets: ".desc",
+    opacity: [1, 0]
+  });
+  (0, _animeEs.default)({
+    targets: "#o01, #o02, #o03, #o04, #o05",
+    duration: 200,
+    delay: 200,
+    easing: "easeInOutQuad",
+    opacity: [0, 1]
   });
 });
-(0, _jquery.default)("#float03, #o03").on("click", function () {
-  (0, _jquery.default)("#modalImage").attr("src", "./ig(3).jpeg");
-  (0, _jquery.default)(".modal-content").css({
-    "background-color": "#ee4037"
-  });
+(0, _jquery.default)("#icon01").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Engineering</h4>\n    <ul>\n        <li>STP Chemicals</li>\n        <li>Drain and Grease management</li>\n        <li>Boiler Chemicals</li>\n        <li>Drinking water plant chemicals</li>\n        <li>Cooling tower chemicals</li>\n        <li>Lubricants and oils</li>\n        <li>Swimming pool chemicals</li>\n    </ul>");
 });
-(0, _jquery.default)("#float04, #o04").on("click", function () {
-  (0, _jquery.default)("#modalImage").attr("src", "./ig(4).jpeg");
-  (0, _jquery.default)(".modal-content").css({
-    "background-color": "#92278f"
-  });
+(0, _jquery.default)("#icon02").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Housekeeping And Laundry</h4>\n    <ul>\n        <li>Public area cleanning chemicals</li>\n        <li>Room and bathroom cleanning chemicals</li>\n        <li>Laundry chemicals</li>\n        <li>Stain removal chemicals</li>\n        <li>Furnicher and floor care</li>\n        <li>Carpet care</li>\n    </ul>");
 });
-(0, _jquery.default)("#float05").on("click", function () {
-  (0, _jquery.default)("#modalImage").attr("src", "./ig(5).jpeg");
-  (0, _jquery.default)(".modal-content").css({
-    "background-color": "#12a89d"
-  });
+(0, _jquery.default)("#icon03").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Food And Beverages</h4>\n    <ul>\n        <li>Dishwash chemicals</li>\n        <li>Food contact surface cleanning chemicals</li>\n        <li>Utensils cleaning chemicals</li>\n        <li>Equipment cleanning chemicals</li>\n        <li>Workfloor cleanning chemicals</li>\n        <li>Perssonel hygiene chemicals</li>\n    </ul>");
+});
+(0, _jquery.default)("#icon04").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Water</h4>\n    <ul>\n        <li>Physical</li>\n        <li>Chemical</li>\n        <li>Microbiological</li>\n    </ul>");
+});
+(0, _jquery.default)("#icon05").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Food</h4>\n    <ul>\n        <li>Physical</li>\n        <li>Chemical</li>\n        <li>Microbiological</li>\n    </ul>");
+});
+(0, _jquery.default)("#icon06").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Bins and baskets</h4>\n    <ul>\n        <li>Garbage Bins</li>\n        <li>Mop Buckets</li>\n        <li>Housekeeping trolly</li>\n        <li>Spray bottles</li>\n    </ul>");
+});
+(0, _jquery.default)("#icon07").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Cleaning Equipments</h4>\n    <ul>\n        <li>Mops, brooms and brushes</li>\n        <li>Cloaths and pads</li>\n    </ul>");
+});
+(0, _jquery.default)("#icon08").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Safety And Hygeine</h4>\n    <ul>\n        <li>Thermometers and data loggers</li>\n        <li>Rapid test kits</li>\n        <li>PPE and spill kits</li>\n    </ul>");
+});
+(0, _jquery.default)("#icon09").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Tissues</h4>\n    <ul>\n        <li>Tissue rolls</li>\n        <li>Kitchen towels</li>\n        <li>Napkins</li>\n    </ul>");
+});
+(0, _jquery.default)("#icon10").mouseenter(function () {
+  (0, _jquery.default)("#canvastowrite").html("\n    <h4>Food Safety</h4>\n    <ul>\n        <li>Temperature strips</li>\n        <li>Foodsafety tables</li>\n        <li>Test strips</li>\n    </ul>");
 });
 },{"bootstrap":"../node_modules/bootstrap/dist/js/bootstrap.js","bootstrap/dist/css/bootstrap.css":"../node_modules/bootstrap/dist/css/bootstrap.css","animejs/lib/anime.es.js":"../node_modules/animejs/lib/anime.es.js","jquery":"../node_modules/jquery/dist/jquery.js","@fortawesome/fontawesome-free/css/all.css":"../node_modules/@fortawesome/fontawesome-free/css/all.css","@fortawesome/fontawesome-free/js/all.js":"../node_modules/@fortawesome/fontawesome-free/js/all.js","./style.scss":"style.scss","animejs":"../node_modules/animejs/lib/anime.es.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -25013,7 +25037,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52249" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54953" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
